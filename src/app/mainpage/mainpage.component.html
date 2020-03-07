@@ -1,0 +1,59 @@
+
+    <form class="container" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <h2 class="header"> REGISTRATION FORMS </h2>
+  
+        <div>
+            <label>Firstname</label><br>
+            <input type="text" [(ngModel)]="user.firstName" formControlName="firstName" pattern="^[A-Za-z]{3,15}"
+                [ngClass]="{ 'is-invalid': submitted && val.firstName.errors }"/>
+            <div *ngIf="submitted && val.firstName.errors" class="error">
+                <div *ngIf="val.firstName.errors.required">First Name is required</div>
+                <div *ngIf="val.firstName.errors.pattern">Firstname contain only alphabets atleast 3 to 15 characters
+                </div>
+            </div>
+        </div>
+  
+        <div>
+            <label>Surname</label><br>
+            <input type="text" [(ngModel)]="user.surName"  formControlName="surName" pattern="^[A-Za-z]{3,15}"
+                [ngClass]="{ 'is-invalid': submitted && val.surName.errors }" />
+            <div *ngIf="submitted && val.surName.errors" class="error">
+                <div *ngIf="val.surName.errors.required">Surname is required</div>
+                <div *ngIf="val.surName.errors.pattern">Firstname contain only alphabets atleast 3 to 15 characters
+                </div>
+            </div>
+        </div>
+  
+        <div>
+            <label>Email</label><br>
+            <input type="text" [(ngModel)]="user.email" formControlName="Email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+"
+                [ngClass]="{ 'is-invalid': submitted && val.Email.errors }" />
+            <div *ngIf="submitted && val.Email.errors" class="error">
+                <div *ngIf="val.Email.errors.required">Email is required</div>
+                <div *ngIf="val.Email.errors.pattern">Email must be a valid email address</div>
+            </div>
+        </div>
+  
+        <div>
+            <label>Password</label><br>
+            <input type="password"  formControlName="password"
+                pattern="^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,15}"
+                [ngClass]="{ 'is-invalid': submitted && val.password.errors }" />
+            <div *ngIf="submitted && val.password.errors" class="error">
+                <div *ngIf="val.password.errors.required">Password is required</div>
+                <div *ngIf="val.password.errors.pattern">Password can be 6 to 15 characters and should contain
+                    lowercase,uppercase,numbers
+                    and specialcharacters </div>
+            </div>
+        </div>
+          <br>
+        <div class="button">
+            <button id="registerBtn"  >Login
+               
+            </button>
+            <input type="reset" id="resetBtn" value="Reset" onClick="window.location.reload()">
+        </div>
+  
+    </form>
+  
+  

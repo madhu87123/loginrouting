@@ -1,0 +1,20 @@
+
+body{
+    background-color: rgb(188, 188, 197);
+}
+ 
+#logoutBtn{
+    color: white;
+    font-size: medium;
+    border-radius: 6px;
+    border-style: solid;
+    width: 80px;
+    height: 30px;
+    padding: 4px 4px;
+    background-color: rgb(33, 163, 62);
+    margin-top: 4px;
+    margin-left: 90%;
+}
+#head{
+    text-align: center;
+}
